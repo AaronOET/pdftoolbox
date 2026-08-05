@@ -85,6 +85,7 @@ Examples:
   rmbmk -i input.pdf                 # Overwrite input.pdf, keep a .bak backup
   rmbmk -i input.pdf -o output.pdf   # Write result to output.pdf
   rmbmk -i *.pdf                     # Process every PDF matched by the shell glob
+  rmbmk -i **/*.pdf                  # Recurse into subdirectories (enable globstar first, e.g. `shopt -s globstar` in bash)
         """,
     )
     parser.add_argument(
