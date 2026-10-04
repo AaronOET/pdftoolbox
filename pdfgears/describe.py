@@ -18,9 +18,9 @@ TOOL_DESCRIPTIONS = {
         input file is overwritten and a .bak backup is kept.
 
         Examples:
-            rmbmk -i input.pdf                 # Overwrite input.pdf, keep a .bak backup
-            rmbmk -i input.pdf -o output.pdf   # Write result to output.pdf
-            rmbmk -i *.pdf                      # Process every PDF matched by the shell glob
+            rmbmk input.pdf                    # Overwrite input.pdf, keep a .bak backup
+            rmbmk input.pdf -o output.pdf      # Write result to output.pdf
+            rmbmk *.pdf                         # Process every PDF matched by the shell glob
     """,
 }
 

@@ -82,15 +82,14 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  rmbmk -i input.pdf                 # Overwrite input.pdf, keep a .bak backup
-  rmbmk -i input.pdf -o output.pdf   # Write result to output.pdf
-  rmbmk -i *.pdf                     # Process every PDF matched by the shell glob
-  rmbmk -i **/*.pdf                  # Recurse into subdirectories (enable globstar first, e.g. `shopt -s globstar` in bash)
+  rmbmk input.pdf                    # Overwrite input.pdf, keep a .bak backup
+  rmbmk input.pdf -o output.pdf      # Write result to output.pdf
+  rmbmk *.pdf                        # Process every PDF matched by the shell glob
+  rmbmk **/*.pdf                     # Recurse into subdirectories (enable globstar first, e.g. `shopt -s globstar` in bash)
         """,
     )
     parser.add_argument(
-        "-i", "--input",
-        required=True,
+        "input",
         nargs="+",
         metavar="FILE",
         type=Path,
@@ -100,12 +99,12 @@ Examples:
         "-o", "--output",
         type=Path,
         metavar="FILE",
-        help="Output PDF path (only valid with a single -i file; defaults to overwriting the input)",
+        help="Output PDF path (only valid with a single input file; defaults to overwriting the input)",
     )
     args = parser.parse_args()
 
     if args.output and len(args.input) > 1:
-        print("Error: -o/--output can only be used with a single -i input file.", file=sys.stderr)
+        print("Error: -o/--output can only be used with a single input file.", file=sys.stderr)
         sys.exit(2)
 
     exit_code = 0

@@ -23,13 +23,13 @@ pip install pdfgears
 pdfgears-info
 
 # Remove numeric-only bookmarks, overwriting the input (keeps a .bak backup)
-rmbmk -i input.pdf
+rmbmk input.pdf
 
 # Remove numeric-only bookmarks, writing to a new file
-rmbmk -i input.pdf -o output.pdf
+rmbmk input.pdf -o output.pdf
 
 # Process every PDF matched by the shell glob
-rmbmk -i *.pdf
+rmbmk *.pdf
 ```
 
 ### Python API
